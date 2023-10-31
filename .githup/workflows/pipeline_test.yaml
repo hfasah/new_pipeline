@@ -1,0 +1,19 @@
+name: Build Operation Report 
+on: 
+    push:
+        branches:
+            - 'main'
+        paths-ignore:
+            - '.github/workflows/**'
+jobs:
+    first-play:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Hello world
+              run:  echo "hello"
+            - name: List file before checkout
+              run:  ls -lrt
+            - name: Code Checkout
+              uses: actions/checkout@v2
+            - name: List file after checkout
+              run:  ls -lrt
